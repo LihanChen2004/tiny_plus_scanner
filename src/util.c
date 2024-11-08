@@ -36,7 +36,7 @@ void printToken(TokenType token, const char * tokenString)
     case DO:
     case WHILE:
     case WRITE:
-      fprintf(listing, "reserved word: %s\n", tokenString);
+      fprintf(listing, "\033[1;32mreserved word: %s\033[0m\n", tokenString);
       break;
     case ASSIGN:
       fprintf(listing, "SYM: =\n");

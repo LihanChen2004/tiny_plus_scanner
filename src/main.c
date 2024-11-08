@@ -38,7 +38,7 @@ int main(int argc, char * argv[])
     exit(1);
   }
   listing = stdout; /* send listing to screen */
-  fprintf(listing, "\nTINY COMPILATION: %s\n\n", pgm);
+  fprintf(listing, "\nTINY PLUS COMPILATION: %s\n\n", pgm);
 
   while (getToken() != ENDFILE);
 
