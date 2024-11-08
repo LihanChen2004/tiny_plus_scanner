@@ -56,7 +56,6 @@ int main( int argc, char * argv[] )
   while (getToken()!=ENDFILE);
 
   fclose(source);
-  system("pause");
   return 0;
 }
 
