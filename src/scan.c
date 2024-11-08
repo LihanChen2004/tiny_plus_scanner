@@ -116,6 +116,9 @@ TokenType getToken(void)
         else if (c == '{') {
           save = FALSE;
           state = INCOMMENT;  // 注释状态
+        } else if (c == '\'') {
+          save = FALSE;
+          state = INUPDOX;
         } else if (c == '<') {
           state = INLT;
         } else if (c == '>') {
@@ -238,6 +241,19 @@ TokenType getToken(void)
           state = DONE;
           currentToken = ERROR;
         }
+      case INUPDOX: // '
+        if (c == '\'') {  // 读到下一个上引号
+          save = FALSE;
+          state = DONE;
+          currentToken = STR;
+        } else if (!(linepos < bufsize)) {  // 注释的右部括号缺失
+          save = FALSE;
+          state = DONE;
+          currentToken = ERROR;
+          strcpy(tokenString, "STR missing \" \' \" !");
+          tokenStringIndex += 20;
+        }
+        break;
       case DONE:
       default: /* should never happen */
         fprintf(listing, "Scanner Bug: state= %d\n", state);

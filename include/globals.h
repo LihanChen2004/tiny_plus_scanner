@@ -29,6 +29,7 @@ typedef enum
 /* book-keeping tokens */
 { ENDFILE,
   ERROR,
+  STR,
   /* reserved words */
   IF,
   THEN,

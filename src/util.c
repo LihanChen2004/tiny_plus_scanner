@@ -95,6 +95,9 @@ void printToken(TokenType token, const char * tokenString)
     case ID:
       fprintf(listing, "ID, name= %s\n", tokenString);
       break;
+    case STR:
+      fprintf(listing, "STR, val= %s\n", tokenString);
+      break;
     case ERROR:
       fprintf(listing, "\033[1;31mERROR: %s\033[0m\n", tokenString);
       break;
