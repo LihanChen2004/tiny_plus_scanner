@@ -170,6 +170,11 @@ TokenType getToken(void)
               break;
             default:
               currentToken = ERROR;
+              char * msg = "Unknown token ";
+              strcpy(tokenString, "Unknown token ");
+              tokenString[14] = (char)c;
+              tokenString[15] = '\0';
+              tokenStringIndex += strlen(msg) + 2;
               break;
           }
         }
