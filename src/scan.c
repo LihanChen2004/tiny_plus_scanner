@@ -58,9 +58,11 @@ static struct
 {
   char * str;
   TokenType tok;
-} reservedWords[MAXRESERVED] = {{"if", IF},     {"then", THEN},     {"else", ELSE},
-                                {"end", END},   {"repeat", REPEAT}, {"until", UNTIL},
-                                {"read", READ}, {"write", WRITE}};
+} reservedWords[MAXRESERVED] = {
+  {"if", IF},       {"then", THEN},     {"else", ELSE},     {"end", END},    {"repeat", REPEAT},
+  {"until", UNTIL}, {"read", READ},     {"write", WRITE},   {"true", TRUE1}, {"false", FALSE1},
+  {"or", OR},       {"and", AND},       {"not", NOT},       {"int", INT},    {"bool", BOOL},
+  {"float", FLOAT}, {"double", DOUBLE}, {"string", STRING}, {"do", DO},      {"while", WHILE}};
 
 /* lookup an identifier to see if it is a reserved word */
 /* uses linear search */

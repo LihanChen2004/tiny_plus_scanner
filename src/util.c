@@ -10,7 +10,6 @@
 
 #include "globals.h"
 
-
 /* Procedure printToken prints a token 
  * and its lexeme to the listing file
  */
@@ -24,6 +23,18 @@ void printToken(TokenType token, const char * tokenString)
     case REPEAT:
     case UNTIL:
     case READ:
+    case TRUE1:
+    case FALSE1:
+    case OR:
+    case AND:
+    case NOT:
+    case INT:
+    case BOOL:
+    case FLOAT:
+    case DOUBLE:
+    case STRING:
+    case DO:
+    case WHILE:
     case WRITE:
       fprintf(listing, "reserved word: %s\n", tokenString);
       break;
