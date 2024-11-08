@@ -1,0 +1,17 @@
+{ This program contains errors }
+integer x; { 'integer' is not a valid keyword }
+bool flag;
+string message;
+
+read x;
+if x > 0 then
+    y := x ** 2; { '**' is not a valid operator }
+    flag := true;
+    message := 'Positive number';
+else
+    y := -x;
+    flag := false;
+    message := 'Negative number';
+endif { 'endif' is not a valid keyword }
+write y;
+write message;

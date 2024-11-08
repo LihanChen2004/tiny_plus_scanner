@@ -1,0 +1,17 @@
+{ Sample program in TINY+ language }
+int x, y;
+bool flag;
+string message;
+
+read x;
+if x > 0 then
+    y := x * 2;
+    flag := true;
+    message := 'Positive number';
+else
+    y := -x;
+    flag := false;
+    message := 'Negative number';
+end
+write y;
+write message;
