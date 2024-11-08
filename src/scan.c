@@ -174,11 +174,21 @@ TokenType getToken(void)
         break;
       case INCOMMENT:
         save = FALSE;
-        if (c == EOF) {
+        if (c == EOF) {  // 没有遇到 } 就结束
+          save = FALSE;
           state = DONE;
-          currentToken = ENDFILE;
-        } else if (c == '}')
+          currentToken = ERROR;
+          strcpy(tokenString, "comment missing \" } \" !");
+          tokenStringIndex += 20;
+        } else if (c == '{') {  // 嵌套
+          save = FALSE;
+          state = DONE;
+          currentToken = ERROR;
+          strcpy(tokenString, "comment cannot be nested");
+          tokenStringIndex += 30;
+        } else if (c == '}') {
           state = START;
+        }
         break;
       case INASSIGN:
         state = DONE;
@@ -241,7 +251,7 @@ TokenType getToken(void)
           state = DONE;
           currentToken = ERROR;
         }
-      case INUPDOX: // '
+      case INUPDOX:       // '
         if (c == '\'') {  // 读到下一个上引号
           save = FALSE;
           state = DONE;
