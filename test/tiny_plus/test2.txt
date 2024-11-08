@@ -1,9 +1,11 @@
-{ Compute factorial of a number }
-int n, fact;
-read n;
-fact := 1;
-repeat
-    fact := fact * n;
-    n := n - 1;
-until n = 0;
-write fact;
+int a;
+bool b;
+float c;
+double d;
+string e;
+
+a := 10;
+b := true;
+e := 'hello';
+
+a := a * b / - e;

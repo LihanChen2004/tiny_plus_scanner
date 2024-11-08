@@ -1,17 +1,14 @@
-{ This program contains errors }
-integer x; { 'integer' is not a valid keyword }
-bool flag;
-string message;
-
-read x;
-if x > 0 then
-    y := x ** 2; { '**' is not a valid operator }
-    flag := true;
-    message := 'Positive number';
+if x < 10 then
+  y := x + 1;
 else
-    y := -x;
-    flag := false;
-    message := 'Negative number';
-endif { 'endif' is not a valid keyword }
-write y;
-write message;
+  y :&^#= x - 1;
+end \\
+{ This is a comment }
+x := 5 * (3 + 2);
+
+{ Nested comment { not allowed } }
+
+'string'
+'unterminated string
+
+{ Missing closing brace
