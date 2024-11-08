@@ -9,6 +9,8 @@
 #ifndef _SCAN_H_
 #define _SCAN_H_
 
+#include "globals.h"
+
 /* MAXTOKENLEN is the maximum size of a token */
 #define MAXTOKENLEN 40
 

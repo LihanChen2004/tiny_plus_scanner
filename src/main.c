@@ -5,7 +5,7 @@
 /* Lihan Chen                                       */
 /****************************************************/
 
-#include "globals.h"
+#include "scan.h"
 
 /* set NO_PARSE to TRUE to get a scanner-only compiler */
 #define NO_PARSE TRUE
@@ -16,9 +16,6 @@
  * generate code
  */
 #define NO_CODE FALSE
-
-#include "util.h"
-#include "scan.h"
 
 /* allocate global variables */
 int lineno = 0;
