@@ -178,14 +178,14 @@ TokenType getToken(void)
           save = FALSE;
           state = DONE;
           currentToken = ERROR;
-          char* msg = "comment missing \" } \" !";
+          char * msg = "comment missing \" } \" !";
           strcpy(tokenString, msg);
           tokenStringIndex += strlen(msg);
         } else if (c == '{') {  // 嵌套
           save = FALSE;
           state = DONE;
           currentToken = ERROR;
-          char* msg = "comment cannot be nested";
+          char * msg = "comment cannot be nested";
           strcpy(tokenString, msg);
           tokenStringIndex += strlen(msg);
         } else if (c == '}') {
@@ -200,7 +200,7 @@ TokenType getToken(void)
           ungetNextChar();
           save = FALSE;
           currentToken = ERROR;
-          char* msg = "missing \" = \" after \" : \"!";
+          char * msg = "missing \" = \" after \" : \"!";
           strcpy(tokenString, msg);
           tokenStringIndex += strlen(msg);
         }
@@ -265,7 +265,7 @@ TokenType getToken(void)
           save = FALSE;
           state = DONE;
           currentToken = ERROR;
-          char* msg = "STR missing \" \' \" !";
+          char * msg = "STR missing \" \' \" !";
           strcpy(tokenString, msg);
           tokenStringIndex += strlen(msg);
         }

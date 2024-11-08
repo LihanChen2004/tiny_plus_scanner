@@ -39,55 +39,55 @@ void printToken(TokenType token, const char * tokenString)
       fprintf(listing, "reserved word: %s\n", tokenString);
       break;
     case ASSIGN:
-      fprintf(listing, ":=\n");
+      fprintf(listing, "SYM: =\n");
       break;
     case LT:
-      fprintf(listing, "<\n");
+      fprintf(listing, "SYM: <\n");
       break;
     case EQ:
-      fprintf(listing, "=\n");
+      fprintf(listing, "SYM: :=\n");
       break;
     case LPAREN:
-      fprintf(listing, "(\n");
+      fprintf(listing, "SYM: (\n");
       break;
     case RPAREN:
-      fprintf(listing, ")\n");
+      fprintf(listing, "SYM: )\n");
       break;
     case SEMI:
-      fprintf(listing, ";\n");
+      fprintf(listing, "SYM: ;\n");
       break;
     case PLUS:
-      fprintf(listing, "+\n");
+      fprintf(listing, "SYM: +\n");
       break;
     case MINUS:
-      fprintf(listing, "-\n");
+      fprintf(listing, "SYM: -\n");
       break;
     case TIMES:
-      fprintf(listing, "*\n");
+      fprintf(listing, "SYM: *\n");
       break;
     case OVER:
-      fprintf(listing, "/\n");
+      fprintf(listing, "SYM: /\n");
       break;
     case GT:
-      fprintf(listing, ">\n");
+      fprintf(listing, "SYM: >\n");
       break;
     case LE:
-      fprintf(listing, "<=\n");
+      fprintf(listing, "SYM: <=\n");
       break;
     case GE:
-      fprintf(listing, ">=\n");
+      fprintf(listing, "SYM: >=\n");
       break;
     case NE:
-      fprintf(listing, "!=\n");
+      fprintf(listing, "SYM: !=\n");
       break;
     case COMMA:
-      fprintf(listing, ",\n");
+      fprintf(listing, "SYM: ,\n");
       break;
     case UPDOX:
-      fprintf(listing, "^\n");
+      fprintf(listing, "SYM: ^\n");
       break;
     case ENDFILE:
-      fprintf(listing, "EOF\n");
+      fprintf(listing, "SYM: EOF\n");
       break;
     case NUM:
       fprintf(listing, "NUM, val= %s\n", tokenString);

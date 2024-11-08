@@ -7,16 +7,6 @@
 
 #include "scan.h"
 
-/* set NO_PARSE to TRUE to get a scanner-only compiler */
-#define NO_PARSE TRUE
-/* set NO_ANALYZE to TRUE to get a parser-only compiler */
-#define NO_ANALYZE TURE
-
-/* set NO_CODE to TRUE to get a compiler that does not
- * generate code
- */
-#define NO_CODE FALSE
-
 /* allocate global variables */
 int lineno = 0;
 FILE * source;
