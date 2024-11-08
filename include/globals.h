@@ -63,7 +63,13 @@ typedef enum
   OVER,
   LPAREN,
   RPAREN,
-  SEMI } TokenType;
+  SEMI,
+  GT,
+  LE,
+  GE,
+  NE,
+  COMMA,
+  UPDOX } TokenType;
 
 extern FILE * source;  /* source code text file */
 extern FILE * listing; /* listing output text file */

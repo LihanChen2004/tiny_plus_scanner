@@ -12,7 +12,18 @@
 #include "util.h"
 
 /* states in scanner DFA */
-typedef enum { START, INASSIGN, INCOMMENT, INNUM, INID, DONE } StateType;
+typedef enum {
+  START,
+  INASSIGN,
+  INCOMMENT,
+  INNUM,
+  INID,
+  DONE,
+  INLT,
+  INGT,
+  INE,
+  INUPDOX,
+} StateType;
 
 /* lexeme of identifier or reserved word */
 char tokenString[MAXTOKENLEN + 1];
@@ -94,17 +105,21 @@ TokenType getToken(void)
     save = TRUE;
     switch (state) {
       case START:
-        if (isdigit(c))
-          state = INNUM;
-        else if (isalpha(c))
-          state = INID;
+        if (isdigit(c))       // 数字
+          state = INNUM;      // 数字常量状态
+        else if (isalpha(c))  // 字母
+          state = INID;       // 标识符状态
         else if (c == ':')
           state = INASSIGN;
         else if ((c == ' ') || (c == '\t') || (c == '\n') || (c == '\r'))
           save = FALSE;
         else if (c == '{') {
           save = FALSE;
-          state = INCOMMENT;
+          state = INCOMMENT;  // 注释状态
+        } else if (c == '<') {
+          state = INLT;
+        } else if (c == '>') {
+          state = INGT;
         } else {
           state = DONE;
           switch (c) {
@@ -138,6 +153,15 @@ TokenType getToken(void)
               break;
             case ';':
               currentToken = SEMI;
+              break;
+            case '>':
+              currentToken = GT;
+              break;
+            case ',':
+              currentToken = COMMA;
+              break;
+            case '^':
+              currentToken = UPDOX;
               break;
             default:
               currentToken = ERROR;
@@ -179,6 +203,41 @@ TokenType getToken(void)
           currentToken = ID;
         }
         break;
+      case INLT:  // <
+        state = DONE;
+        if (c == '=') {  // <=
+          state = DONE;
+          currentToken = LE;
+        } else {
+          ungetNextChar();
+          save = FALSE;
+          state = DONE;
+          currentToken = LT;
+        }
+        break;
+      case INGT:  // >
+        state = DONE;
+        if (c == '=') {  // >=
+          state = DONE;
+          currentToken = GE;
+        } else {
+          ungetNextChar();
+          save = FALSE;
+          state = DONE;
+          currentToken = GT;
+        }
+        break;
+      case INE:  // !=
+        state = DONE;
+        if (c == '=') {  // !=
+          state = DONE;
+          currentToken = NE;
+        } else {
+          ungetNextChar();
+          save = FALSE;
+          state = DONE;
+          currentToken = ERROR;
+        }
       case DONE:
       default: /* should never happen */
         fprintf(listing, "Scanner Bug: state= %d\n", state);
