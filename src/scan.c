@@ -1,8 +1,9 @@
 /****************************************************/
 /* File: scan.c                                     */
-/* The scanner implementation for the TINY compiler */
+/* The scanner implementation                       */
+/* for the TINY plus compiler                       */
 /* Compiler Construction: Principles and Practice   */
-/* Kenneth C. Louden                                */
+/* Lihan Chen                                       */
 /****************************************************/
 
 #include "globals.h"

@@ -1,8 +1,8 @@
 /****************************************************/
 /* File: main.c                                     */
-/* Main program for TINY compiler                   */
+/* Main program for TINY plus compiler              */
 /* Compiler Construction: Principles and Practice   */
-/* Kenneth C. Louden                                */
+/* Lihan Chen                                       */
 /****************************************************/
 
 #include "globals.h"

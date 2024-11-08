@@ -1,9 +1,9 @@
 /****************************************************/
 /* File: util.c                                     */
 /* Utility function implementation                  */
-/* for the TINY compiler                            */
+/* for the TINY plus compiler                       */
 /* Compiler Construction: Principles and Practice   */
-/* Kenneth C. Louden                                */
+/* Lihan Chen                                       */
 /****************************************************/
 
 #include "globals.h"

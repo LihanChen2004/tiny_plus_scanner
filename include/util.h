@@ -1,8 +1,9 @@
 /****************************************************/
 /* File: util.h                                     */
-/* Utility functions for the TINY compiler          */
+/* Utility functions implementation                 */
+/* for the TINY plus compiler                       */
 /* Compiler Construction: Principles and Practice   */
-/* Kenneth C. Louden                                */
+/* Lihan Chen                                       */
 /****************************************************/
 
 #ifndef _UTIL_H_
