@@ -46,7 +46,7 @@ void printToken( TokenType token, const char* tokenString )
       break;
     case ERROR:
       fprintf(listing,
-          "ERROR: %s\n",tokenString);
+          "\033[1;31mERROR: %s\033[0m\n",tokenString);
       break;
     default: /* should never happen */
       fprintf(listing,"Unknown token: %d\n",token);
