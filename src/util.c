@@ -84,7 +84,7 @@ void printToken(TokenType token, const char * tokenString)
       fprintf(listing, "SYM: ,\n");
       break;
     case UPDOX:
-      fprintf(listing, "SYM: ^\n");
+      fprintf(listing, "SYM: '\n");
       break;
     case ENDFILE:
       fprintf(listing, "SYM: EOF\n");

@@ -123,6 +123,8 @@ TokenType getToken(void)
           state = INLT;
         } else if (c == '>') {
           state = INGT;
+        } else if (c == '!') {
+          state = INE;
         } else {
           state = DONE;
           switch (c) {
@@ -163,7 +165,7 @@ TokenType getToken(void)
             case ',':
               currentToken = COMMA;
               break;
-            case '^':
+            case '\'':
               currentToken = UPDOX;
               break;
             default:
