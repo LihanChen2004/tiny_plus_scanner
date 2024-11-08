@@ -178,14 +178,16 @@ TokenType getToken(void)
           save = FALSE;
           state = DONE;
           currentToken = ERROR;
-          strcpy(tokenString, "comment missing \" } \" !");
-          tokenStringIndex += 20;
+          char* msg = "comment missing \" } \" !";
+          strcpy(tokenString, msg);
+          tokenStringIndex += strlen(msg);
         } else if (c == '{') {  // 嵌套
           save = FALSE;
           state = DONE;
           currentToken = ERROR;
-          strcpy(tokenString, "comment cannot be nested");
-          tokenStringIndex += 30;
+          char* msg = "comment cannot be nested";
+          strcpy(tokenString, msg);
+          tokenStringIndex += strlen(msg);
         } else if (c == '}') {
           state = START;
         }
@@ -198,6 +200,9 @@ TokenType getToken(void)
           ungetNextChar();
           save = FALSE;
           currentToken = ERROR;
+          char* msg = "missing \" = \" after \" : \"!";
+          strcpy(tokenString, msg);
+          tokenStringIndex += strlen(msg);
         }
         break;
       case INNUM:
@@ -260,8 +265,9 @@ TokenType getToken(void)
           save = FALSE;
           state = DONE;
           currentToken = ERROR;
-          strcpy(tokenString, "STR missing \" \' \" !");
-          tokenStringIndex += 20;
+          char* msg = "STR missing \" \' \" !";
+          strcpy(tokenString, msg);
+          tokenStringIndex += strlen(msg);
         }
         break;
       case DONE:
